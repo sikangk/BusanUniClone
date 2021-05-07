@@ -63,7 +63,9 @@ const TitleContainer = styled.View`
   justify-content: center;
   align-items: center;
 `;
-const TextContainer = styled.View``;
+const TextContainer = styled.View`
+  margin-left: 10;
+`;
 const TitleText = styled.Text`
   font-size: 20;
   color: white;

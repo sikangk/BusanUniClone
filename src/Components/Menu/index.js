@@ -15,8 +15,15 @@ const Logo = styled.Image`
   width: 70;
   height: 80;
 `;
+const TextContainer = styled.View`
+  margin-top: 10px;
+  width: 100;
+  height: 20;
+`;
+
 const TextView = styled.Text`
   font-weight: bold;
+  text-align: center;
 `;
 
 const Menu = ({config, navigation}) => {
@@ -26,7 +33,10 @@ const Menu = ({config, navigation}) => {
         navigation.navigate('MenuSubPage', {name: config.main_title2});
       }}>
       <Logo source={require('../../Assets/Images/playstore-icon.png')} />
-      <TextView>{config.main_title2}</TextView>
+
+      <TextContainer>
+        <TextView>{config.main_title2}</TextView>
+      </TextContainer>
     </MenuContainer>
   );
 };

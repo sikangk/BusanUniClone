@@ -15,9 +15,15 @@ const Logo = styled.Image`
   width: 70;
   height: 80;
 `;
+const TextContainer = styled.View`
+  margin-top: 10px;
+  width: 100;
+  height: 20;
+`;
 
 const TextView = styled.Text`
   font-weight: bold;
+  text-align: center;
 `;
 
 const Notifications = ({config, navigation}) => {
@@ -27,7 +33,9 @@ const Notifications = ({config, navigation}) => {
         navigation.navigate('NotiSubPage', {name: config.main_title1});
       }}>
       <Logo source={require('../../Assets/Images/icon1.png')} />
-      <TextView>{config.main_title1}</TextView>
+      <TextContainer>
+        <TextView>{config.main_title1}</TextView>
+      </TextContainer>
     </NotiContainer>
   );
 };

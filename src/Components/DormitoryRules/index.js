@@ -12,12 +12,18 @@ const DomitoryContainer = styled.TouchableOpacity`
 `;
 
 const Logo = styled.Image`
-  width: 50;
-  height: 70;
+  width: 62;
+  height: 83;
+`;
+
+const TextContainer = styled.View`
+  width: 100;
+  height: 50;
 `;
 
 const TextView = styled.Text`
   font-weight: bold;
+  text-align: center;
 `;
 
 const DomitoryRules = ({config, navigation}) => {
@@ -27,7 +33,9 @@ const DomitoryRules = ({config, navigation}) => {
         navigation.navigate('DormitorySubPage', {name: config.main_title4})
       }>
       <Logo source={require('../../Assets/Images/icon4.png')} />
-      <TextView>{config.main_title4}</TextView>
+      <TextContainer>
+        <TextView>{config.main_title4}</TextView>
+      </TextContainer>
     </DomitoryContainer>
   );
 };

@@ -15,9 +15,13 @@ const Logo = styled.Image`
   width: 60;
   height: 80;
 `;
-
+const TextContainer = styled.View`
+  width: 100;
+  height: 50;
+`;
 const TextView = styled.Text`
   font-weight: bold;
+  text-align: center;
 `;
 
 const Inquiries = ({config, navigation}) => {
@@ -27,7 +31,9 @@ const Inquiries = ({config, navigation}) => {
         navigation.navigate('InquiriesSubPage', {name: config.main_title5})
       }>
       <Logo source={require('../../Assets/Images/icon5.png')} />
-      <TextView>{config.main_title5}</TextView>
+      <TextContainer>
+        <TextView>{config.main_title5}</TextView>
+      </TextContainer>
     </InquiriesContainer>
   );
 };

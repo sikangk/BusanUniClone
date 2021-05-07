@@ -12,12 +12,17 @@ const NoticeContainer = styled.TouchableOpacity`
 `;
 
 const Logo = styled.Image`
-  width: 50;
+  width: 60;
+  height: 80;
+`;
+const TextContainer = styled.View`
+  width: 100;
   height: 50;
 `;
 
 const TextView = styled.Text`
   font-weight: bold;
+  text-align: center;
 `;
 
 const Notice = ({config, navigation}) => {
@@ -27,7 +32,9 @@ const Notice = ({config, navigation}) => {
         navigation.navigate('NoticeSubPage', {name: config.main_title3})
       }>
       <Logo source={require('../../Assets/Images/icon2.png')} />
-      <TextView>{config.main_title3}</TextView>
+      <TextContainer>
+        <TextView>{config.main_title3}</TextView>
+      </TextContainer>
     </NoticeContainer>
   );
 };

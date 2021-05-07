@@ -9,6 +9,7 @@ const Container = styled.View`
 
 const Info = styled.View`
   flex: 3;
+  margin-left: 10;
 `;
 const InfoText = styled.Text`
   margin: 15px 5px 0px 5px;
@@ -30,6 +31,7 @@ const InquiriesText = styled.Text`
   margin: 0px 5px 0px 5px;
   font-weight: bold;
   font-size: 18;
+  margin-left: 10;
 `;
 
 const NoticeBoard = styled.View`
@@ -78,7 +80,12 @@ const InquiriesSubPage = () => {
         </NoticeBoard>
         <BoardSummary>{langState.sub_page4_b2_t}</BoardSummary>
         <NoticeBoard>
-          <BoardText>{langState.sub_page4_b3}</BoardText>
+          <BoardText
+            onPress={() => {
+              Linking.openURL('tel:0515107257');
+            }}>
+            {langState.sub_page4_b3}
+          </BoardText>
         </NoticeBoard>
         <BoardSummary>{langState.sub_page4_b3_t}</BoardSummary>
       </InquiriesMethod>
