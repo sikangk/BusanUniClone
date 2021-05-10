@@ -1,5 +1,4 @@
 import React from 'react';
-import {View, Text, TouchableOpacity} from 'react-native';
 import styled from 'styled-components';
 
 const MenuContainer = styled.TouchableOpacity`
@@ -32,7 +31,7 @@ const Menu = ({config, navigation}) => {
       onPress={() => {
         navigation.navigate('MenuSubPage', {name: config.main_title2});
       }}>
-      <Logo source={require('../../Assets/Images/playstore-icon.png')} />
+      <Logo source={require('../../Assets/Images/icon2.png')} />
 
       <TextContainer>
         <TextView>{config.main_title2}</TextView>

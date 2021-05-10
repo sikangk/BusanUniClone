@@ -23,7 +23,7 @@ import NoticeSubPage from './Components/Notice/NoticeSubPage';
 import DormitorySubPage from './Components/DormitoryRules/DormitorySubPage';
 import InquiriesSubPage from './Components/Inquiries/InquiriesSubPage';
 
-// css 작업
+// css 작업 styled components 사용
 const styles = StyleSheet.create({
   backgroundImage: {
     width: '100%',
@@ -92,6 +92,7 @@ const BodySecondCon = styled.View`
 `;
 // css 작업 여기까지
 
+//한영 모드 바꾸기 위한 객체
 const len = {
   kor: {
     main_title1: '알림확인',
@@ -142,8 +143,8 @@ const len = {
 };
 
 function Home({navigation}) {
-  const [changeLang, setChangeLang] = useState(len.kor);
-  const [isKor, setIsKor] = useState(true);
+  const [changeLang, setChangeLang] = useState(len.kor); //한글 영어 객체 state
+  const [isKor, setIsKor] = useState(true); // 한글 영어 state
 
   const dispatch = useDispatch();
 
@@ -203,6 +204,7 @@ const Stack = createStackNavigator();
 //네비게이션을 위한 APP 컴포넌트 따로
 const App = () => {
   useEffect(() => {
+    //스플래시
     setTimeout(() => {
       SplashScreen.hide();
     }, 1000);

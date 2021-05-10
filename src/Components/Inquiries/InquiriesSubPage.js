@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, Linking} from 'react-native';
+import {Linking} from 'react-native';
 import {useSelector} from 'react-redux';
 import styled from 'styled-components';
 

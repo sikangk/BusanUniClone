@@ -1,5 +1,4 @@
 import React from 'react';
-import {View, Text, TouchableOpacity} from 'react-native';
 import styled from 'styled-components';
 
 const NoticeContainer = styled.TouchableOpacity`
@@ -31,7 +30,7 @@ const Notice = ({config, navigation}) => {
       onPress={() =>
         navigation.navigate('NoticeSubPage', {name: config.main_title3})
       }>
-      <Logo source={require('../../Assets/Images/icon2.png')} />
+      <Logo source={require('../../Assets/Images/icon3.png')} />
       <TextContainer>
         <TextView>{config.main_title3}</TextView>
       </TextContainer>

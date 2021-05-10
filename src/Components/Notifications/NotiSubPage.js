@@ -1,11 +1,10 @@
-import React, {useState, useEffect} from 'react';
-import {View, Text, Switch, Image} from 'react-native';
+import React, {useState} from 'react';
+import {Switch} from 'react-native';
 import {useSelector} from 'react-redux';
 import styled from 'styled-components';
-import {WebView} from 'react-native-webview';
 import Icon from 'react-native-vector-icons/AntDesign';
 
-const SubPage = styled.ScrollView`
+const SubPage = styled.View`
   flex: 1;
   margin-top: 20;
 `;
@@ -17,7 +16,7 @@ const PushSetting = styled.View`
   align-items: center;
 `;
 
-const PushList = styled.View`
+const PushList = styled.ScrollView`
   margin-top: 20;
   flex: 9;
 `;
@@ -35,7 +34,7 @@ const PushListText = styled.Text`
 `;
 const Content = styled.View``;
 
-const ContentContainer = styled.View`
+const ContentContainer = styled.TouchableOpacity`
   margin: 0;
   padding: 0;
   height: 80;
@@ -96,47 +95,41 @@ const NotiSubPage = () => {
           value={isEnabled}
         />
       </PushSetting>
+      <PushListText>{langState.sub_page1_t2}</PushListText>
       <PushList>
-        <PushListText>{langState.sub_page1_t2}</PushListText>
         <Content>
-          <ContentContainer>
+          <ContentContainer onPress={() => onExpand(0)}>
             <ContentText>
               2020학년도 1학기 입사자 유의사항 및 안내사항(04.17.영문추가)
             </ContentText>
             <ContentArrowCon>
               {expand[0].isExpand === false ? (
-                <Icon name="up" size={13} onPress={() => onExpand(0)} />
+                <Icon name="up" size={13} />
               ) : (
-                <Icon name="down" size={13} onPress={() => onExpand(0)} />
+                <Icon name="down" size={13} />
               )}
             </ContentArrowCon>
           </ContentContainer>
           {expand[0].isExpand === true ? (
             <ContentImageCon>
-              <ContentImage
-                source={require('../../Assets/Images/noti.png')}
-                style={{resizeMode: 'stretch'}}
-              />
+              <ContentImage source={require('../../Assets/Images/noti.png')} />
             </ContentImageCon>
           ) : null}
         </Content>
         <Content>
-          <ContentContainer>
+          <ContentContainer onPress={() => onExpand(1)}>
             <ContentText>2021학년도 1학기 대학생활원 동장 모집</ContentText>
             <ContentArrowCon>
               {expand[1].isExpand === false ? (
-                <Icon name="up" size={13} onPress={() => onExpand(1)} />
+                <Icon name="up" size={13} />
               ) : (
-                <Icon name="down" size={13} onPress={() => onExpand(1)} />
+                <Icon name="down" size={13} />
               )}
             </ContentArrowCon>
           </ContentContainer>
           {expand[1].isExpand && (
             <ContentImageCon>
-              <ContentImage
-                source={require('../../Assets/Images/noti2.png')}
-                style={{resizeMode: 'stretch'}}
-              />
+              <ContentImage source={require('../../Assets/Images/noti2.png')} />
             </ContentImageCon>
           )}
         </Content>

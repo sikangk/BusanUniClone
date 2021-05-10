@@ -1,4 +1,4 @@
-import {CHANGE_LANG, language} from '../actions/langAction';
+import {CHANGE_LANG} from '../actions/langAction';
 
 const len = {
   main_title1: '알림확인',

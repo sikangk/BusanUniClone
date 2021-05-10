@@ -1,5 +1,4 @@
 import React from 'react';
-import {Text, View, TouchableOpacity, Image} from 'react-native';
 import styled from 'styled-components';
 
 const NotiContainer = styled.TouchableOpacity`
